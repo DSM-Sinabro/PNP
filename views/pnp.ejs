@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>PNP</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-black.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/pnp.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="../css/style.css" media="screen" title="no title" charset="utf-8">
+
+</head>
+
+<body>
+
+    <header id="header">
+      <!--for(i in list){
+        list[i].name;
+      }-->
+
+        <% if(usernum == null || name == null){ %>
+            <div id="loginMenu">
+                <a data-toggle="modal" data-target="#signInModal">Sign in</a>
+                <a data-toggle="modal" data-target="#signUpModal">Sign up</a>
+                <hr>
+            </div>
+            <%}else{%>
+                <div id="loginMenu">
+                    <p>
+                        Welcome!
+                        <%= name %> 님!
+                        <a href="/logout">Log out</a>
+                    </p>
+                </div>
+                <%}%>
+                    <h1 id="PNP">PNP</h1>
+                    <div id="downBtn">
+                        Start!
+                    </div>
+    </header>
+    <div class="page" id="intro">
+        <h1 id="PNPWhat">What is PNP?</h1>
+        <p id="PNPWhatDesc">
+            PNP는 People Need People의 약자로 서로의 프로젝트나 <br>
+            멘토링에 필요한 사람들을 구할수있게 도와주는 사이트입니다. <br><br>
+            자신이 공부하고 싶은것을 가르쳐 줄 사람이 필요하다? <br> <span>그럼 멘토링! </span><br>
+            함께 프로젝트를 진행할 팀원이 필요하다?<br> <span>그렇다면 인력시장!</span><br>
+            어떤 동아리를 가야할지 모르겠다?<br> <span>그럴땐 동아리파인더!</span>
+        </p>
+    </div>
+    <section id="section" style="vertical-align: middle;">
+        <content id="content">
+          <div class="w3-row-padding w3-center w3-margin-top">
+            <div class="w3-third">
+              <a href="MENTORING" id="mentoringText">
+              <div class="w3-card-2 w3-padding-top w3-hover-opacity" style="min-height:460px">
+                <h3><b>Mentoring</b></h3><br>
+                <img src="../img/tutor.png" alt="tutor.png" width="220" height="220"/><br><br>
+                <p><h5><b>당신의 멘토링 활동을 응원합니다!</b></h5></p>
+                <p>멘토, 또는 멘티가 필요한 분들은 여기입니다.</p>
+              </div>
+              </a>
+            </div>
+            <div class="w3-third">
+              <a href="RECRUIT">
+              <div class="w3-card-2 w3-padding-top w3-hover-opacity" style="min-height:460px">
+                <h3><b>Job Announcement</b></h3><br>
+                <img src="../img/jobAnnouncement.png" alt="jobAnnouncement.png" width="220" height="220"/><br><br>
+                <p><h5><b>프로젝트가 필요하신가요?</b></h5></p>
+                <p>이곳에서 프로젝트의 인력을 구할 수 있습니다.</p>
+                <p>또는 자신이 원하는 프로젝트도 찾을 수 있습니다.</p>
+              </div>
+              </a>
+            </div>
+            <div class="w3-third">
+              <a href="ClubFinder">
+              <div class="w3-card-2 w3-padding-top w3-hover-opacity" style="min-height:460px">
+                <h3><b>Club</b></h3><br>
+                <img src="../img/club.png" alt="club.png" width="220" height="220"/><br><br>
+                <p><h5><b>동아리를 찾고 있나요?</b></h5></p>
+                <p>이곳에서 자신에게 맞는 동아리를 찾아보세요!</p>
+              </div>
+              </a>
+            </div>
+          </div>
+        </content>
+    </section>
+
+
+
+    <div id="signInModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4>Sign-In</h4>
+          </div>
+          <form class="signup">
+          <div class="modal-body">
+              <div id = "sign">
+              <label><b>ID</b></label>
+              <input type="text" name="id" id="id" value=""><br>
+              <label><b>Password</b>
+              </label><input type="password" name="password" id="password" value="" onkeypress="if(event.keyCode == 13){ confirmSignIn(); }"><br>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <input type="button" id="confirmSign" value="Sign In">
+            <input type="button" id="cancelSign" data-dismiss="modal" value="Cancel"/>
+            <br><a data-toggle="modal" data-target="#signUpModal">회원가입</a>
+
+          </div>
+
+        </form>
+        </div>
+      </div>
+    </div>
+    <div id="signUpModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Sign Up</h4>
+          </div>
+          <!--<form class="signup" action="/signUp" method="post">-->
+          <form class="signup">
+          <div class="modal-body">
+              <div id = "sign">
+              <label>ID</label><input type="text" name="userid" id="userid" placeholder="6~20자의 영 대/소문자 또는 숫자" value="">
+              <input type="button" id="checkId" value="중복 확인"/><br>
+              <br><label>E-mail</label><input type="email" name="email" id = "email" value=""><br>
+              <br><label>Password</label><input type="password" name="pass" id="pass" placeholder="8~30자의 영 대/소문자 또는 숫자" value=""><br>
+              <br><label>Password Check</label><input type="password" name="passcheck" id = "passcheck" value=""><br>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <input type="button" id="confirmSign" value="Sign Up"/>
+            <input type="button" id="cancelSign" data-dismiss="modal" value="Cancel"/>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    <script src="../js/pnp.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+form{
+  border: 3px solid #f1f1f1;
+  background-color: #EAEAEA;
+}
+input[type = text], input[type = email], input[type = password]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button{
+  background-color: #A6A6A6;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+#btn{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+#cancel{
+  background-color: #F15F5F;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+label{
+  display: inline-block;
+  width: 70px;
+  text-align: center;
+}

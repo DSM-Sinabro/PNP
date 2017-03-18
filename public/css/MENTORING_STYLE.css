@@ -1,0 +1,21 @@
+body{
+  margin : 0;
+  font-family: 'Slabo 27px', serif;
+
+}
+
+#list{
+  width: 1000px;
+  height: 500px;
+
+  border-collapse: collapse;
+  margin-left: 32vh;
+
+  background-color: #white;
+
+}
+body{
+  background-color: white;
+  background-image: url('http://cfile5.uf.tistory.com/image/236B2241520BB2F4055A98');
+
+}

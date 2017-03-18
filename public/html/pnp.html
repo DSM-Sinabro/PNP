@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PNP</title>
+    <link rel="stylesheet" href="../css/pnp.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="../css/style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-black.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script>
+      $(document).ready(function(){
+
+          $("#downBtn").on('click', function(event) {
+            if (this.hash !== "") {
+              $('html, body').animate({
+                scrollTop: $('#section').offset().top
+            }, 500, function(){
+                  console.log('hey');
+              });
+            }
+
+            event.preventDefault();
+          });
+      });
+      </script>
+  </head>
+  <body>
+
+<header id="header">
+  <h1>PNP</h1>
+    <div id="downBtn">
+            Menu
+    </div>
+</header>
+
+<section id = "section">
+  <content id = "content">
+    <div class="w3-row-padding w3-center w3-margin-top">
+      <div class="w3-third">
+        <a href="MENTORING.html">
+        <div class="w3-card-2 w3-padding-top w3-hover-opacity" style="min-height:460px">
+          <h3><b>Mentoring</b></h3><br>
+          <img src="../img/tutor.png" alt="tutor.png" width="220" height="220"/><br><br>
+          <p><h5><b>당신의 멘토링 활동을 응원합니다!</b></h5></p>
+          <p>멘토, 또는 멘티가 필요한 분들은 여기입니다.</p>
+        </div>
+        </a>
+      </div>
+      <div class="w3-third">
+        <a href="JOB_ANNOUNCEMENT.html">
+        <div class="w3-card-2 w3-padding-top w3-hover-opacity" style="min-height:460px">
+          <h3><b>Job Announcement</b></h3><br>
+          <img src="../img/jobAnnouncement.png" alt="jobAnnouncement.png" width="220" height="220"/><br><br>
+          <p><h5><b>프로젝트가 필요하신가요?</b></h5></p>
+          <p>이곳에서 프로젝트의 인력을 구할 수 있습니다.</p>
+          <p>또는 자신이 원하는 프로젝트도 찾을 수 있습니다.</p>
+        </div>
+        </a>
+      </div>
+      <div class="w3-third">
+        <a href="USED_MARKET.html">
+        <div class="w3-card-2 w3-padding-top w3-hover-opacity" style="min-height:460px">
+          <h3><b>Club</b></h3><br>
+          <img src="../img/club.png" alt="club.png" width="220" height="220"/><br><br>
+          <p><h5><b>동아리를 찾고 있나요?</b></h5></p>
+          <p>이곳에서 자신에게 맞는 동아리를 찾아보세요!</p>
+        </div>
+        </a>
+      </div>
+    </div>
+<!--
+      <div class="page" id="first">
+          <div id = "button1" class="btn">
+          <p>
+           <a href="MENTORING.html">&nbsp;MENTORING</a>
+          </p>
+          </div>
+          <div class="menuImg" id="firstImg">
+
+          </div>
+          <div class="menuDesc">
+              <p class="desc">
+                  hello
+              </p>
+          </div>
+      </div>
+
+   <div class="page" id="second">
+       <div id = "button2" class="btn">
+            <p>
+                <a href="JOB_ANNOUNCEMENT.html">JOB <br> ANNOUNCEMENT</a>
+            </p>
+       </div>
+       <div class="menuImg" id="secondImg">
+
+       </div>
+       <div class="menuDesc">
+           <p class="desc">
+               hello
+           </p>
+       </div>
+   </div>
+
+   <div class="page" id="third">
+       <div id = "button3" class="btn">
+           <p>
+               <a href="USED_MARKET.html">USED MARKET</a>
+           </p>
+       </div>
+       <div class="menuImg" id="thirdImg">
+
+       </div>
+       <div class="menuDesc">
+           <p class="desc">
+               hello
+           </p>
+       </div>
+   </div>
+-->
+  </content>
+</section>
+
+  </body>
+</html>

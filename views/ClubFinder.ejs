@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>동아리 관리</title>
+    <% include ./head.ejs %>
+  </head>
+  <link rel="stylesheet" href="/css/USED_MARKET.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Della+Respira" rel="stylesheet">
+  <body>
+    <div align = "center">
+      <a href="/" id="home"><img src="/img/home.png" alt="" id="home"></a>
+    </div>
+
+    <div align = "center">
+      <div id="container" align = "center">
+        <div align = "left">
+          <span id="title">CLUBFINDER <span id="findclub">:find your club!</span></span>
+        </div>
+
+        <div>
+          <hr class ="hor">
+        </div>
+        <%
+          var first = curPage;
+          while(first % 5 != 1){first--;}
+          var last = data.length / 6 + (data.length % 6 != 0 ? 1 : 0);
+          if(last - first >= 5){
+            last = first + 4;
+          }
+
+          var postFirst = (curPage-1) * 6;
+          var postLast = (curPage-1) * 6 + 6;
+          if(postLast > data.length){
+            postLast = data.length;
+          }
+        %>
+        <% if(data.length > 0) {
+        for(var i = postFirst; i< postLast; i++){ %>
+        <div id="mainTable" align = "center">
+          <span id="number"><%=i+1%>.</span>
+          <!--<a href="#" id="clubtitle">&nbsp<%=data[i].club_write_title%><br></a> -->
+          <span><a id="clubtitle" href=<%="./ClubFinderView?postno="+data[i].club_write_number%>><%=data[i].club_write_title%></a><br></span>
+          <span id="clubname"><span id="clubnametext">CLUBNAME:</span>'<%=data[i].club_write_clubname%>'<br></span>
+          <span id="oneline"><span id="onelinetext">OneLineSummary:</span><%=data[i].club_write_1lineSum%></span>
+          <span id="Date"><%=data[i].club_date%></span>
+          <hr class = "underhr">
+        </div>
+        <% } } else { %>
+        <div id="mainTable" align = "center">
+          <span>게시글이 없습니다.</span>
+        </div>
+        <% } %>
+        <div class="bottom">
+          <ul class="w3-pagination w3-border">
+            <% if(curPage == 1) { %>
+            <li class="w3-disabled"><a href="#">&laquo;</a></li>
+            <% } else { %>
+            <li><a href=<%="./ClubFinder?pageno="+(curPage-1)%>>&laquo;</a></li>
+            <% } %>
+            <% for(var i = first; i <= last; i++) {
+              if(i == curPage) { %>
+            <li><a class="w3-green" href="#"><%=i%></a></li>
+            <% } else { %>
+            <li><a href=<%="./ClubFinder?pageno="+i%>><%=i%></a></li>
+            <% } } %>
+            <% if(curPage == last || data.length == 0) { %>
+            <li class="w3-disabled"><a href="#">&raquo;</a></li>
+            <% } else { %>
+            <li><a href=<%="./ClubFinder?pageno="+(curPage+1)%>>&raquo;</a></li>
+            <% } %>
+          </ul>
+          <% if(userid != null && usernum != null) {%>
+          <button type="button" name="writebutton" id="writebutton" ><a href="ClubFinderBoard" class="writeButtontext">WRITE</a></button>
+          <% } %>
+        </div>
+      </div>
+      <div style="border" id="box"></div>
+    </div>
+  </body>
+</html>

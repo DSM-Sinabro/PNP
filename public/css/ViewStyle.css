@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+p{
+  white-space: pre;
+}
+a{
+  text-decoration: none;
+}
+body{
+  background-image: url('https://source.unsplash.com/random');
+  background-size: cover;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.contentArea{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  min-height: 10px;
+  font-size: 14px;
+}
+.rewriteArea{
+  padding-bottom: 10px;
+}
+#box{
+  width: 60%;
+  min-height: 250px;
+  background-color: white;
+  display: inline-block;
+}
+#READ{
+  color: white;
+  font-size: 80px;
+}
+#title{
+  font-size: 35px;
+  margin: 10px 0px 0px 40px;
+}
+#date{
+  font-weight: bold;
+  color: #666;
+  margin-left: 10px;
+}
+#where{
+  color: #999;
+  margin-left: 10px;
+}
+#name{
+  color: #999;
+  margin-left: 40px;
+}
+
+#realView{
+  font-size: 13px;
+  float: right;
+  margin-right: 40px;
+  /*color: orange;*/
+}
+#line{
+  width: 90%;
+  color: #666
+}
+
+#rewritePass{
+  height: 1.5em;
+  width: 50%;
+}
+
+#submitButton{
+  font-size: 15px;
+  width: 10%;
+}

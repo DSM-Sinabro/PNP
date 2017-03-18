@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <link rel="stylesheet" href="/css/ClubFinderBoard.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+  <body>
+    <%
+    var clubtitle ="";
+    var clubname ="";
+    var oneline = "";
+    var content = "";
+    var password = "";
+    var action ="saveClubFinderBoard";
+    if(data != null){
+      clubtitle = data[0].club_write_title;
+      clubname = data[0].club_write_clubname;
+      oneline = data[0].club_write_1lineSum;
+      content = data[0].club_write_content;
+      password = data[0].club_write_password;
+      action = "rewriteclubfinderboard?postno="+data[0].club_write_number;
+    }
+    %>
+  <span id="write">WRITE</span>
+    <!--<span id="write">WRITE</span>
+    <span id="title">Title</span> <input type="text" name="titleInput" value="" id="titleInput">
+    <span id="clubname">Club Name</span> <input type="text" name="clubnameInput" value="" id="clubnameInput">
+    <span id="summary">1 line Summary</span> <input type="text" name="1linesummaryInput" value="" id="onelinesummaryInput">
+    <span id="content">Content</span> <textarea name="contentInput" id="contentInput" rows="80" cols="100"></textarea>
+      <input type="text" name="contentInput" value="" id="contentInput">
+    <span id="password">Password</span> <input type="password" name="passwordInput" value="" id="passwordInput">-->
+    <div class="container" align="center">
+      <form action="<%=action%>" method="post">
+        <div class="box">
+          <input type="text" name="clubtitle"  id="clubtitle" placeholder="제목" value="<%= clubtitle %>"  onkeypress="return event.keyCode != 13;" required>
+          <hr>
+          <input type="text" name="clubname" id="clubname" placeholder="동아리명" value="<%= clubname %>"  onkeypress="return event.keyCode != 13;" required>
+          <hr>
+          <input type="text" name="oneline"  id="oneline" class = "oneline" placeholder="동아리 한 줄 소개" value="<%= oneline %>"  onkeypress="return event.keyCode != 13;" required>
+          <hr>
+          <textarea name="content" id="content" rows="25" cols="75" placeholder="내용을 입력하세요" required><%=content%></textarea>
+          <hr>
+          <input type="password" name="password"  id="password" placeholder="비밀번호" value="<%= password %>">
+          <div align="right">
+            <input type="submit" id="submitButton" value="Submit"/>
+            <input type="button" id="cancelButton" value="Cancel" onclick="cancelButton_click()"/>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

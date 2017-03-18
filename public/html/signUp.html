@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/signUp.css" media="screen" title="no title">
+    <meta charset="utf-8">
+    <title>회원가입</title>
+  </head>
+  <body>
+    <h2>Sign Up</h2>
+<form class="signup" action="index.html" method="post">
+  <div id = "sign">
+  <label>ID</label><input type="text" name="nick" id = "ID" value="">
+  <button type = "submit">중복 확인</button><br>
+  <br><label>E-mail</label><input type="email" name="email" id = "email" value=""><br>
+  <br><label>Password</label><input type="password" name="pass" id = "pass" value=""><br>
+  <br><label>Password Check</label><input type="password" name="passcheck" id = "passcheck" value=""><br>
+  <br><input type="button" name="name" id = "btn" value="Sign Up">
+  <input type="button" name="cancel" id = "cancel" value="Cancel" onclick = "closeWin()">
+  </div>
+</form>
+<script>
+  function closeWin(){
+    self.close();
+  }
+</script>
+  </body>
+</html>

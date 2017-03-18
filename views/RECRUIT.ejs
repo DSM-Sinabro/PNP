@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>구인공고 게시글 작성</title>
+    <%include head.ejs%>
+  </head>
+  <link rel="stylesheet" href="/css/JOB_ANNOUNCEMENT.css">
+  <link rel="stylesheet" href="/css/BoardStyle.css">
+  <body>
+    <div align="center">
+      <a href="/"id="home"><img src="./img/home.png" alt="" id="home"></a>
+    </div>
+    <!--투명박스-->
+    <div align="center">
+      <div id="container" align="center">
+        <!--제목-->
+        <div align="left">
+          <span id="title">RECRUIT</span>
+        </div>
+        <!--게시판 목록-->
+        <div class="Table"id="Table">
+          <table id="board" align="center">
+            <tr id="firstyeol">
+              <th>Number</th>
+              <th>Project Name</th>
+              <th>name</th>
+              <th>recruits</th>
+              <th>areas</th>
+              <th>Date</th>
+              <th>Views</th>
+            </tr>
+            <%
+              var first = curPage;
+              while(first % 5 != 1){first--;}
+              var last = data.length / 10 + (data.length % 10 != 0 ? 1 : 0);
+              if(last - first >= 5){
+                last = first + 4;
+              }
+
+              var postFirst = (curPage-1) * 10;
+              var postLast = (curPage-1) * 10 + 10;
+              if(postLast > data.length){
+                postLast = data.length;
+              }
+            %>
+            <% if(data.length > 0) {
+            for(var j = postFirst; j < postLast; j++){ %>
+            <tr id="yeol">
+                <td><%=j+1%></td><td><a id="postTitle" href=<%="./RecruitView?postno="+data[j].recr_write_number%>><%=data[j].recr_write_prname%></td><td><%=data[j].recr_write_name%></td>
+                <td><%=data[j].recr_write_recruits%></td><td><%=data[j].recr_write_area%></td><td><%=data[j].recr_date%></td><td><%=data[j].recr_write_views%></td>
+            </tr>
+            <% } } else { %>
+            <tr id="yeol">
+              <td colspan="7">게시글이 없습니다.</td>
+            </tr>
+            <% } %>
+          </table>
+        </div>
+        <div class="bottom">
+          <ul class="w3-pagination w3-border">
+            <% if(curPage == 1) { %>
+            <li class="w3-disabled"><a href="#">&laquo;</a></li>
+            <% } else { %>
+            <li><a href=<%="./RECRUIT?pageno="+(curPage-1)%>>&laquo;</a></li>
+            <% } %>
+            <% for(var i = first; i <= last; i++) {
+              if(i == curPage) { %>
+            <li><a class="w3-green" href="#"><%=i%></a></li>
+            <% } else { %>
+            <li><a href=<%="./RECRUIT?pageno="+i%>><%=i%></a></li>
+            <% } } %>
+            <% if(curPage == last || data.length == 0) { %>
+            <li class="w3-disabled"><a href="#">&raquo;</a></li>
+            <% } else { %>
+            <li><a href=<%="./RECRUIT?pageno="+(curPage+1)%>>&raquo;</a></li>
+            <% } %>
+          </ul>
+          <% if(userid != null && usernum != null) {%>
+          <button type="button" name="writebutton" id="writebutton" ><a href="RecruitBoard" id="writeButtontext">WRITE</a></button>
+          <% } %>
+        </div>
+      </div>
+      <div style="border" id="box"></div>
+    </div>
+  </body>
+</html>

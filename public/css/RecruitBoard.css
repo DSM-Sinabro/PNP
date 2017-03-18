@@ -1,0 +1,207 @@
+/*@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+body{
+  background-color:#FFD34E;
+  font-family: 'Nunito Sans', sans-serif;
+
+}
+
+#box{
+  background-color: #FFFAD5;
+  position: absolute;
+  margin-left: 28em;
+  margin-top: 4em;
+  width: 600px;
+  height: 650px;
+  display: inline-block;
+  vertical-align: bottom;
+  z-index: 1;
+
+
+}
+
+#projectname{
+  border-style: solid;
+  border-width: thin;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  position: absolute;
+  margin-left: 30em;
+  margin-top: 6em;
+  z-index: 2;
+}
+#projectnameInput{
+  position: absolute;
+  margin-left: 57em;
+  z-index: 2;
+  margin-top: 8.7em;
+  width: 30em;
+  height: 3em;
+}
+#recruits{
+  position: absolute;
+  margin-left: 30em;
+  margin-top: 9.5em;
+  z-index: 2;
+  border-style: solid;
+
+  border-width: thin;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
+}
+#recruitsInput{
+  position: absolute;
+  margin-left: 53em;
+  margin-top: 14em;
+  z-index: 2;
+  width: 3.5em;
+  height: 2.7em;
+}
+#many{
+  position: absolute;
+  z-index: 2;
+  margin-left: 40em;
+  margin-top : 10em;
+}
+#area{
+  position: absolute;
+  z-index: 2;
+  margin-left: 47em;
+  margin-top: 9.5em;
+  border-style: solid;
+  border-width: thin;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+#areaInput{
+  position: absolute;
+  z-index: 2;
+  margin-left: 76em;
+  margin-top: 13.8em;
+  width: 11em;
+  height: 3em;
+}
+#content{
+  position: absolute;
+  z-index: 2;
+  border-style: solid;
+  border-width: thin;
+  padding-top: 10em;
+  padding-bottom: 10em;
+  margin-left: 30em;
+  margin-top: 14em;
+}
+#contentInput{
+  position: absolute;
+  z-index: 2;
+  margin-left: 52em;
+  width: 35em;
+  height: 30.7em;
+  margin-top: 20.5em;
+}
+#password{
+  position: absolute;
+  z-index: 2;
+  border-style: solid;
+  border-width: thin;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-left: 30em;
+  margin-top: 37em;
+}
+#passwordInput{
+  position: absolute;
+  z-index: 2;
+  width: 33em;
+  height: 3.1em;
+  margin-left: 54em;
+  margin-top: 53.8em;
+}
+#submitButton{
+  margin-left: 51em;
+  margin-top: 44em;
+  position: absolute;
+  z-index: 2;
+  width: 8em;
+  height: 1.5em;
+  font-size: 15px;
+}
+#cancelButton{
+  margin-left: 42em;
+  margin-top: 44em;
+  position: absolute;
+  z-index: 2;
+  width: 8em;
+  height: 1.5em;
+  font-size: 15px;
+}
+#write{
+  position: absolute;
+  font-size: 65px;
+  margin-top: 0.8em;
+  margin-left: 0.5em;
+}
+*/
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+.box{
+  width: 600px;
+  height: 700px;
+  background-color: #cfd8dc;
+  display: inline-block;
+}
+body{
+  background-color: gray;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+input[type=text]{
+  border: none;
+  background: transparent;
+}
+input[type=text]:focus{
+  outline: none;
+}
+
+#WRITE{
+  margin-top: 0.5em;
+  margin-left: 65px;
+  color: white;
+  font-size: 80px;
+}
+
+#title{
+  font-size: 20px;
+  width: 90%;
+  margin-top: 10px;
+  display: inline-block;
+}
+#area{
+  width: 90%;
+}
+#content{
+  width: 90%;
+  height: 78%;
+}
+
+#password{
+  width: 90%;
+  background: white;
+  margin-bottom: 10px;
+}
+
+#cancelButton{
+  margin-right: 28px;
+}
+
+#buttonText{
+  text-decoration: none;
+  color: black;
+}

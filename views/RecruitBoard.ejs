@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>구인공고 게시글 작성</title>
+  </head>
+  <link rel="stylesheet" href="/css/RecruitBoard.css">
+  <script src="/js/RecruitBoard.js" charset="utf-8"></script>
+  <body>
+    <%
+      var prname="";
+      var area = "";
+      var recruits ="";
+      var content ="";
+      var password ="";
+      var action ="saveRecruitBoard";
+      if(data != null){
+        prname = data[0].recr_write_prname;
+        area = data[0].recr_write_area;
+        recruits = data[0].recr_write_recruits;
+        content = data[0].recr_write_content;
+        password = data[0].recr_write_password;
+        action = "rewriterecruitboard?postno="+data[0].recr_write_number;
+      }
+    %>
+
+    <span id="WRITE">WRITE</span>
+      <div class="container" align="center">
+        <form action="<%=action%>" method="post" >
+          <div class="box">
+            <input type="text" name="prname" id="prname" placeholder="프로젝트 이름" value="<%= prname %>" onkeypress="return event.keyCode != 13;" required>
+            <hr>
+            <input type="text" name="area" id="area" placeholder="분야" value="<%=area%>" onkeypress="return event.keyCode != 13;" required>
+            <hr>
+            <input type="text" name="recruits"id="recruits" placeholder="구하는 인원 수 "  value="<%=recruits%>" onkeypress="return event.keyCode != 13;" required>
+            <hr>
+            <textarea name="content" id="content" rows="25" cols="75" placeholder="내용을 입력하세요" required><%=content%></textarea>
+            <hr>
+            <input type="password" name="password"  id="password" placeholder="비밀번호" value="<%=password%>">
+            <div align="right">
+              <input type="submit" id="submitButton" value="Submit"/>
+              <input type="button" id="cancelButton" value="Cancel" onclick="cancelButton_click()"/>
+            </div>
+          </div>
+        </form>
+      </div>
+  </body>
+</html>

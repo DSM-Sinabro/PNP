@@ -1,0 +1,16 @@
+@import url('http://fonts.googleapis.com/earlyaccess/jejugothic.css');
+
+#title{
+  margin-left: 5%;
+}
+#clubname{
+  font-size: 30px;
+  color: #4C4C4C;
+  margin-right: 5%;
+  margin-top: 10px;
+  font-family: 'Jeju Gothic', serif;
+  float: right;
+}
+#oneline{
+  margin-left: 5%;
+}
